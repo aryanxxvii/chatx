@@ -1,7 +1,15 @@
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
-
+import Login from "@/components/Login"
+import Sidebar from "@/components/Sidebar"
+import useAuthUser from "@/hooks/useAuthUser"
 export default function Home() {
-  return <div>Hello</div>;
+  const user = useAuthUser()
+
+  if (!user) return <Login />
+  return (
+    <div className="app">
+      <div className="app__body">
+        <Sidebar user={user} />
+      </div>
+    </div>
+  )
 }

@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", Arial, Helvetica, sans-serif !important;
 }
 
 body {
@@ -114,7 +117,7 @@ a {
 
 .sidebar__chat--info > h2 {
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
   font-weight: 500;
 }
 
@@ -265,10 +268,11 @@ em {
   justify-content: flex-start;
   align-items: center;
   width: 68%;
+  margin-left: 8px;
 }
 
 .sidebar__header--left h4 {
-  margin-left: 10px;
+  margin-left: 13px;
   font-size: 15px;
   font-weight: 500;
   overflow: hidden;
@@ -401,20 +405,6 @@ em {
   }
 }
 
-.sidebar__chat--addRoom {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  background-color: #06d755 !important;
-  border-radius: 50%;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-  color: white;
-  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.281);
-  transform: translateZ(456px);
-}
-
 .sidebar__chat--addRoom button {
   position: absolute;
   top: 50%;
@@ -499,7 +489,7 @@ em {
   width: 50px;
   height: 50px;
   position: absolute;
-  background-color: #06d755 !important;
+  background-color: #379df1 !important;
   border-radius: 50%;
   bottom: 20px;
   right: 20px;
@@ -605,7 +595,7 @@ em {
 }
 
 .login__background {
-  background-image: url("/background.png");
+  background-image: url("../../public/images/background.png");
   background-color: #e6ddd5;
   background-size: contain;
   background-position: center;
