@@ -2,11 +2,8 @@ import { Button } from "@mui/material"
 import { useSignInWithGoogle } from "react-firebase-hooks/auth"
 import { auth } from "@/utils/firebase"
 export default function Login() {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth)
-  console.log(signInWithGoogle)
-  if (error) {
-    console.log(error)
-  }
+  const [signInWithGoogle] = useSignInWithGoogle(auth)
+
   return (
     <div className="app">
       <div className="login">

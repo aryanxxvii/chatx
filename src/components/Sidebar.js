@@ -106,7 +106,6 @@ export default function Sidebar({ user }) {
 
     setMenu(4)
     setSearchResults(searchResults)
-    console.log(searchResults)
   }
 
   return (
