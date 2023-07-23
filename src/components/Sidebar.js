@@ -72,23 +72,24 @@ export default function Sidebar({ user }) {
   async function searchUsersAndRooms(event) {
     event.preventDefault()
     const searchValue = event.target.elements.search.value
-    const end = searchValue.replace(/.$/, (c) =>
-      String.fromCharCode(c.charCodeAt(0) + 1)
-    )
-
+    // const end = searchValue.replace(/.$/, (c) =>
+    //   String.fromCharCode(c.charCodeAt(0) + 1)
+    // )
     const userQuery = query(
       collection(db, "users"),
       where("name", ">=", searchValue),
-      where("name", "<", end)
+      where("name", "<", searchValue + "\uf8ff")
     )
+
     const roomQuery = query(
       collection(db, "rooms"),
       where("name", ">=", searchValue),
-      where("name", "<", end)
+      where("name", "<", searchValue + "\uf8ff")
     )
 
     const userSnapshot = await getDocs(userQuery)
     const roomSnapshot = await getDocs(roomQuery)
+
     const userResults = userSnapshot?.docs.map((doc) => {
       const id =
         doc.id > user.uid ? `${doc.id}${user.uid}` : `${user.uid}${doc.id}`
@@ -100,6 +101,7 @@ export default function Sidebar({ user }) {
       id: doc.id,
       ...doc.data(),
     }))
+    // console.log(userSnapshot)
     const searchResults = [...userResults, ...roomResults].filter(
       (elements) => elements !== undefined
     )
